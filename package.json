@@ -1,0 +1,17 @@
+{
+  "name": "Flashcard Generator",
+  "version": "0.1.0",
+  "description": "The backend of a flashcard app",
+  "scripts": {
+    "start": "node BasicCard.js"
+  },
+  "dependencies": {
+    "inquirer": "^3.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kasuao/Flashcard-Generator"
+  },
+  "author": "Kelcey Asuao",
+  "license": ""
+}
