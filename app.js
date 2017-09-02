@@ -1,23 +1,7 @@
-//use inquirer
-var inquirer = require("inquirer");
-
-//create the constructor
-//pass the parameters front and back
-function BasicCard(front, back){
-	this.front = front;
-	this.back = back;
-
-	//function that cycles through flashcards
-	this.show = function(){
-		console.log("What is: " + this.front);
-	};
-	this.answer = function(){
-		console.log("The answer is: " + this.back);
-	};
-
-};
-
-module.exports = BasicCard;
+//requires
+var inquirer = require(inquirer);
+var ClozeCard = require('./ClozeCard.js');
+var BasicCard = require('./BasicCard.js');
 
 // Create my objects
 //BasicCard objects/flashcards
@@ -50,3 +34,22 @@ var term9 = new BasicCard(
 
 var term10 = new BasicCard(
 	'lines in the code that are usually there to describe what the code is doing', 'comments');
+
+
+//we have to create a recursion so I am creating a variable named count to track the loops
+var count = 0;
+
+//now the recursion to cycle through the flashcards
+var showFront = function(){
+	if(count < 2){
+		//write prompts to ask questions to cycle through cards
+		inquirer.prompt([{
+			type: 'input',
+			name: "`front",
+			// message: BasicCard.show();
+	
+		}]);
+	};
+};
+
+BasicCard();
