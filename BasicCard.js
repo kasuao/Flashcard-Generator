@@ -6,15 +6,6 @@ var inquirer = require("inquirer");
 function BasicCard(front, back){
 	this.front = front;
 	this.back = back;
-
-	//function that cycles through flashcards
-	this.show = function(){
-		console.log("What is: " + this.front);
-	};
-	this.answer = function(){
-		console.log("The answer is: " + this.back);
-	};
-
 };
 
 module.exports = BasicCard;
