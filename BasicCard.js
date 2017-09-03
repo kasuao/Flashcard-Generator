@@ -41,3 +41,36 @@ var term9 = new BasicCard(
 
 var term10 = new BasicCard(
 	'lines in the code that are usually there to describe what the code is doing', 'comments');
+
+// Creating a recursion
+var count = 0;
+var score = 0;
+
+var showFront = function(){
+	if(count<10){
+
+		inquirer.prompt(
+			//ask the question on the front of the card
+			{
+				name: "card1",
+				message: "What is a variable that constains a list?"
+			}
+			).then(function(answers){
+				//store input in a variable to be compared to back of card later
+				var answers = "";
+				if (answers === term1.back) {
+					console.log("correct");
+					score++;
+					console.log("Score: " + score);
+					showFront();
+				}else{
+					console.log("Incorrect" + "\nThe correct answer is... " + term1.back);
+				}
+			});
+	}else{
+		console.log("All done");
+		console.log("Final Score: " + score);
+	};
+};
+
+showFront();
