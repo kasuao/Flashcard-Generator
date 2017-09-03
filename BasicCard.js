@@ -53,18 +53,21 @@ var showFront = function(){
 			//ask the question on the front of the card
 			{
 				name: "card1",
-				message: "What is a variable that constains a list?"
+				message: term1.front
 			}
-			).then(function(answers){
+			).then(function(card1){
 				//store input in a variable to be compared to back of card later
-				var answers = "";
-				if (answers === term1.back) {
+				// need helps with this. I haven't figured out how to save the userinput in a variable
+				//to be compared to the back of the card.
+
+				if (card1 === term1.back) {
 					console.log("correct");
 					score++;
 					console.log("Score: " + score);
 					showFront();
 				}else{
 					console.log("Incorrect" + "\nThe correct answer is... " + term1.back);
+					console.log("Score: " + score);
 				}
 			});
 	}else{
